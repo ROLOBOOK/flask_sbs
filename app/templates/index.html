@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+index
+
+{% endblock %}
+
+
+{% block content_title %}
+
+
+
+
+{% endblock %}
+
+
+{% block content %}
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+<form action="/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="">
+    <input type="submit" class="btn btn-light btn-lg" value="home">
+</form>
+  </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <form action="/to_pos/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="POS">
+</form>
+  </div>
+  <div class="btn-group" role="group" aria-label="Third group">
+    <form action="/to_kadri/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="кадры">
+</form>
+  </div>
+</div>
+<br>
+  {% for file in files%}
+	
+	<div class="text-center">
+        <form action="/to_print/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="path" value="{{dir_file}}">
+    <input type="hidden" name="index" value="{{file}}">
+    <input type="submit" class="btn btn-light btn-lg" value="Распечатать {{file}}">
+</form>
+        </div>
+		
+		<br>
+{% endfor %}
+
+{% endblock %}
