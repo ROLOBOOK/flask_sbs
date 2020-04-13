@@ -6,17 +6,20 @@ index
 
 {% endblock %}
 
-
+	
 {% block content_title %}
-
-
-
 
 {% endblock %}
 
 
 {% block content %}
-<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+
+<div style="text-align: center;">
+<!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"> -->
+<h1><span class="badge badge-light">Что будем печатать?</span></h1>
+<br>
+
+<div class="bd-example" data-example-id="">
   <div class="btn-group mr-2" role="group" aria-label="First group">
 <form action="/" method="POST">
     <!-- скрытый параметр -->
@@ -24,6 +27,7 @@ index
     <input type="submit" class="btn btn-light btn-lg" value="home">
 </form>
   </div>
+
   <div class="btn-group mr-2" role="group" aria-label="Second group">
     <form action="/to_pos/" method="POST">
     <!-- скрытый параметр -->
@@ -31,27 +35,65 @@ index
     <input type="submit" class="btn btn-light btn-lg" value="POS">
 </form>
   </div>
+  
   <div class="btn-group" role="group" aria-label="Third group">
     <form action="/to_kadri/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="кадры">
+    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
 </form>
   </div>
+  
+  <div class="btn-group" role="group" aria-label="foty group">
+    <form action="/to_arm/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="APM">
+</form>
+  </div>
+  
+    <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_eirs/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="ЕИРС">
+</form>
+  </div>
+  
+      <div class="btn-group" role="group" aria-label="sixty group">
+    <form action="/to_suo/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="СУО">
+</form>
+  </div>
+  
+      <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_ot/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="КТО_ОТ">
+</form>
+  </div>
+ </div> 
 </div>
 <br>
+
+
+
   {% for file in files%}
 	
-	<div class="text-center">
+	<div class="text-left">
         <form action="/to_print/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="path" value="{{dir_file}}">
     <input type="hidden" name="index" value="{{file}}">
-    <input type="submit" class="btn btn-light btn-lg" value="Распечатать {{file}}">
+    <input type="submit" class="btn btn-light btn-lg" value="{{file}}">
 </form>
-        </div>
-		
+        </div>	
 		<br>
 {% endfor %}
+	
 
+	
 {% endblock %}

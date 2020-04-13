@@ -1,0 +1,1 @@
+Dir C:doc\*.* | Foreach-Object { Start-Process -FilePath $_.FullName –Verb Print }

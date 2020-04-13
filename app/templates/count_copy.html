@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+index
+
+{% endblock %}
+
+
+{% block content_title %}
+
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div style="text-align: center;">
+<div class="bd-example" data-example-id="">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+<form action="/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="">
+    <input type="submit" class="btn btn-light btn-lg" value="home">
+</form>
+  </div>
+  
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <form action="/to_pos/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="POS">
+</form>
+  </div>
+  
+  <div class="btn-group" role="group" aria-label="Third group">
+    <form action="/to_kadri/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
+</form>
+  </div>
+  
+  <div class="btn-group" role="group" aria-label="foty group">
+    <form action="/to_arm/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="APM">
+</form>
+  </div>
+  
+    <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_eirs/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="ЕИРС">
+</form>
+  </div>
+  
+      <div class="btn-group" role="group" aria-label="sixty group">
+    <form action="/to_suo/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="СУО">
+</form>
+  </div>
+  
+      <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_ot/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="КТО_ОТ">
+</form>
+  </div>
+  </div>
+</div>
+<br><br><br><br><br>
+
+
+
+
+
+
+  <div style="text-align: center;"> <br>
+  
+  <h1><span class="badge badge-light">Выберите количество копий</span></h1>
+  
+  <br><br>
+	<div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_copy/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="count" value="{{1}}">
+    <input type="hidden" name="index" value="{{go_print}}">
+    <input type="submit" class="btn btn-light btn-lg" value="1 copy">
+</form>
+  </div>
+  
+  	<div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_copy/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="count" value="{{2}}">
+    <input type="hidden" name="index" value="{{go_print}}">
+    <input type="submit" class="btn btn-light btn-lg" value="2 copy">
+</form>
+  </div>
+  <br><br>
+  	<div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_copy/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="count" value="{{3}}">
+    <input type="hidden" name="index" value="{{go_print}}">
+    <input type="submit" class="btn btn-light btn-lg" value="3 copy">
+</form>
+  </div>
+  
+  	<div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_copy/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="count" value="{{5}}">
+    <input type="hidden" name="index" value="{{go_print}}">
+    <input type="submit" class="btn btn-light btn-lg" value="4 copy">
+</form>
+  </div>
+  
+  <br><br>
+  
+ 	<div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_copy/" method="POST">
+    <!-- скрытый параметр -->
+	<input type="hidden" name="count" value="{{10}}">
+    <input type="hidden" name="index" value="{{go_print}}">
+    <input type="submit" class="btn btn-light btn-lg" value="5 copy">
+</form>
+  </div>
+  
+</div>
+{% endblock %}
