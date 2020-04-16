@@ -15,16 +15,14 @@ index
 {% block content %}
 
 <div style="text-align: center;">
-<!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"> -->
-<h1><span class="badge badge-light">Что будем печатать?</span></h1>
-<br>
+
 
 <div class="bd-example" data-example-id="">
   <div class="btn-group mr-2" role="group" aria-label="First group">
 <form action="/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="">
-    <input type="submit" class="btn btn-light btn-lg" value="home">
+    <input type="submit" class="btn btn-light btn-lg" value="Главная страница">
 </form>
   </div>
 
@@ -82,7 +80,6 @@ index
 
 
   {% for file in files%}
-	
 	<div class="text-left">
         <form action="/to_print/" method="POST">
     <!-- скрытый параметр -->
@@ -94,6 +91,21 @@ index
 		<br>
 {% endfor %}
 	
+
+	<nav aria-label="...">
+  <ul class="pagination">
+  <!-- проверяем что у страницы нет предыдущей страницы -->
+    <li  {% if page==1 %} class="page-item disabled"	{% endif %}>
+	<!-- ./?page={pages.prev_num } получаем номер предыдузей страницы -->
+      <a {% if last_page > 1 %} class="page-link" href="./?page={{page - 1}}" tabindex="-1" aria-disabled="true" {% endif %}>{% if last_page > 1 %}Предыдущая страница{% endif %}</a>
+    </li>
+	
+	<li  {% if page >= last_page %} class="page-item disabled"	{% endif %}		>
+      <a {% if last_page > 1 %} class="page-link" href="./?page={{page + 1}}"aria-disabled="true"{% endif %}>{% if last_page > 1 %}Следующая страница{% endif %}</a>
+    </li>
+  </ul>
+</nav> 
+
 
 	
 {% endblock %}

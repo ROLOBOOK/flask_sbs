@@ -5,42 +5,76 @@ from flask import request
 from flask import redirect
 
 
+def work_with_page(page,files):
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+    stop = 8
+    last_page = len(files)//stop
+    if page == 1:
+        files = files[:stop]
+    else:
+        start = stop * (page - 1)
+        end = stop * (page)
+        files = files[start:end]  
+     
+    return (page, last_page, files)
+        
+@app.route('/', methods=['POST','GET'])
+def index():
+    return render_template('main.html')
+
+
+
     
 @app.route('/to_pos/', methods=['GET','POST'])
 def list_pos():
-    
-    files = os.listdir(r'for_print\to_pos')[:9]
-    return render_template('index.html', files=files, dir_file='to_pos')
+    page = request.args.get('page')
+    files = os.listdir(r'for_print\to_pos')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='to_pos')
 
 @app.route('/to_kadri/', methods=['GET','POST'])
 def list_kard():
-    files = os.listdir(r'for_print\кадровые вопросы')[:9]
-    return render_template('index.html', files=files, dir_file='кадровые вопросы')    
+    page = request.args.get('page') #page = 123  localhost:5000/?page=123 
+    files = os.listdir(r'for_print\кадровые вопросы')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='кадровые вопросы')    
 
 @app.route('/to_arm/', methods=['GET','POST'])
 def list_apm():
-    files = os.listdir(r'for_print\АРМ')[:9]
-    return render_template('index.html', files=files, dir_file='АРМ')  
+    page = request.args.get('page')
+    files = os.listdir(r'for_print\АРМ')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='АРМ')  
     
 @app.route('/to_eirs/', methods=['GET','POST'])
 def list_eirs():
-    files = os.listdir(r'for_print\ЕИРС')[:9]
-    return render_template('index.html', files=files, dir_file='ЕИРС')  
+    page = request.args.get('page')
+    files = os.listdir(r'for_print\ЕИРС')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='ЕИРС')  
     
 @app.route('/to_ot/', methods=['GET','POST'])
 def list_ot():
-    files = os.listdir(r'for_print\КТО_ОТ')[:9]
-    return render_template('index.html', files=files, dir_file='КТО_ОТ')
+    page = request.args.get('page')
+    files = os.listdir(r'for_print\КТО_ОТ')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='КТО_ОТ')
     
 @app.route('/to_suo/', methods=['GET','POST'])
 def list_suo():
-    files = os.listdir(r'for_print\СУО')[:9]
-    return render_template('index.html', files=files, dir_file='СУО')
+    page = request.args.get('page')
+    files = os.listdir(r'for_print\СУО')
+    page, last_page, files = work_with_page(page,files)
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='СУО')
     
-@app.route('/', methods=['POST','GET'])
-def index():
-    return render_template('index.html')
-    
+
+
+
+
+# для печати    
 @app.route('/to_print/', methods=['GET','POST'])
 def printing():
     file_print = request.form['index']

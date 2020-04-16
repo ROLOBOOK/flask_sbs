@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+index
+
+{% endblock %}
+
+	
+{% block content_title %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div style="text-align: center;">
+<!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"> -->
+<h1><span class="badge badge-light">Что будем печатать?</span></h1>
+<br>
+
+
+
+<br>
+ <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_ot/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="Документы для КТО_ОТ">
+	</form>
+  </div><br><br>
+
+<div class="btn-group" role="group" aria-label="sixty group">
+    <form action="/to_suo/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="Документы для СУО">
+</form>
+  </div><br><br>
+  
+  
+  <div class="btn-group" role="group" aria-label="fifty group">
+    <form action="/to_eirs/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="Документы для ЕИРС">
+</form>
+  </div><br><br>
+
+  <div class="btn-group" role="group" aria-label="foty group">
+    <form action="/to_arm/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="Документы для POS APM">
+</form>
+  </div><br><br>
+  
+    <div class="btn-group" role="group" aria-label="Third group">
+    <form action="/to_kadri/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
+</form>
+  </div><br><br>
+  
+
+  <div class="btn-group mr-6" role="group" aria-label="Second group">
+    <form action="/to_pos/" method="POST">
+    <!-- скрытый параметр -->
+    <input type="hidden" name="index" value="pos">
+    <input type="submit" class="btn btn-light btn-lg" value="Документы для POS">
+</form>
+  </div><br><br>
+  
+
+  
+  </div>
+{% endblock %}
