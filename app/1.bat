@@ -1,1 +1,2 @@
-Dir C:doc\*.* | Foreach-Object { Start-Process -FilePath $_.FullName –Verb Print }
+TIMEOUT /T 10
+python C:\flask_sbs\app\main.py

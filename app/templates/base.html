@@ -4,26 +4,31 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 
-    <!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    
+	<!-- Bootstrap CSS -->
     <link type="text/css" rel="stylesheet"
             href="{{ url_for('static',
                   filename='/css/bootstrap.min.css')}}" />
-
+				  
+	
     <title>{% block title %}
 
-    {% endblock%} | FLASK app</title>
+    {% endblock%} </title>
+	
   </head>
-  <body>
+  <body class="p-3 mb-2 bg-secondary ">
 
-
-	<body background = " {{ url_for('static', filename='background_for_site.jpg')}}">
-    <div class="container">
-        <h1>
+	
+	<!-- <body background  = " {{ url_for('static', filename='background_for_site.jpg')}}" >   -->
+    
+        
           {% block content_title %}
 
           {% endblock %}
-        </h1>
+        
         {% block content %}
 
         {% endblock%}

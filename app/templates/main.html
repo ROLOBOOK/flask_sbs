@@ -2,7 +2,7 @@
 
 {% block title %}
 
-index
+
 
 {% endblock %}
 
@@ -13,20 +13,22 @@ index
 
 
 {% block content %}
+<br><br><br>
+
 
 <div style="text-align: center;">
 <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"> -->
-<h1><span class="badge badge-light">Что будем печатать?</span></h1>
+<h1><span class="badge badge-light text-wit p-3 mb-2">Что будем печатать?</span> </h1>
 <br>
 
 
 
-<br>
+
  <div class="btn-group" role="group" aria-label="fifty group">
     <form action="/to_ot/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="Документы для КТО_ОТ">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="   Документы для КТО_ОТ   ">
 	</form>
   </div><br><br>
 
@@ -34,7 +36,7 @@ index
     <form action="/to_suo/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="Документы для СУО">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="     Документы для СУО      ">
 </form>
   </div><br><br>
   
@@ -43,7 +45,7 @@ index
     <form action="/to_eirs/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="Документы для ЕИРС">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="     Документы для ЕИРС    ">
 </form>
   </div><br><br>
 
@@ -51,7 +53,7 @@ index
     <form action="/to_arm/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="Документы для POS APM">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value=" Документы для POS APM ">
 </form>
   </div><br><br>
   
@@ -59,7 +61,7 @@ index
     <form action="/to_kadri/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="      кадровые вопросы      ">
 </form>
   </div><br><br>
   
@@ -68,11 +70,15 @@ index
     <form action="/to_pos/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="Документы для POS">
+    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="     Документы для POS      ">
 </form>
   </div><br><br>
   
 
-  
+
   </div>
+  
+  
+  
+ 
 {% endblock %}

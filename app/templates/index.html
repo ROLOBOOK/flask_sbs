@@ -2,7 +2,7 @@
 
 {% block title %}
 
-index
+
 
 {% endblock %}
 
@@ -13,7 +13,7 @@ index
 
 
 {% block content %}
-
+<br>
 <div style="text-align: center;">
 
 
@@ -80,14 +80,16 @@ index
 
 
   {% for file in files%}
-	<div class="text-left">
+
+	<div class="text-center ">
         <form action="/to_print/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="path" value="{{dir_file}}">
     <input type="hidden" name="index" value="{{file}}">
-    <input type="submit" class="btn btn-light btn-lg" value="{{file}}">
+    <input type="submit" class="btn btn-light btn-lg col-10" value="{{file}}">
 </form>
-        </div>	
+ 
+		</div>	
 		<br>
 {% endfor %}
 	
