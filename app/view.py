@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-import os
+import os, time
 from flask import request
 from flask import redirect
 
@@ -90,7 +90,7 @@ def to_copy():
     count = request.form['count']
     for i in range(int(count)):
         os.startfile(go_print, "print")
-    
-    return redirect('/')
+    return render_template('wait.html')
+
 
 #os.startfile("YourDocument", "print")
