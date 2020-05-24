@@ -1,37 +1,92 @@
 <!doctype html>
-<html lang="en" class="p-3 mb-2 bg-secondary ">
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
 
-	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+
+  <style> 
+   html { height: 100%; }
+   body {
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+   } 
+   
+   .butn {
+ background: #FFFAFA;
+ width: 350px; 
+ height: 60px;  
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 25px;
+   }
+   
+div.block{
+        display:inline-block;
+        padding:5px;
+        margin:10px;
+    }
     
-	<!-- Bootstrap CSS -->
-    <link type="text/css" rel="stylesheet"
-            href="{{ url_for('static',
-                  filename='/css/bootstrap.min.css')}}" />
-				  
+   .top_butn {
+ background: #FFFAFA;
+ width: 170px;
+ height: 40px;
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 15px;
+   }	
 	
-    <title>{% block title %}
+	.text_butn {
+ background: #FFFAFA;
+  
+ height: 60px;  
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 25px;
+   }
+	
+ .butn_cop 	{
+ background: #FFFAFA;
+  width: 150px;
+ height: 100px;  
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 25px;
+   }
+   
+ .butn_next_page 	{
+ background: #FFFAFA;
+  width: 80px;
+ height: 20px;  
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 15px;
+   }
 
-    {% endblock%} </title>
+ .butn_disable 	{
+  display: none;
+   }
+
+  </style
+
+
+
+
 	
   </head>
-  <body class="p-3 mb-2 bg-secondary ">
+  <body>
 
-	
-	<!-- <body background  = " {{ url_for('static', filename='background_for_site.jpg')}}" >   -->
-    
-        
-          {% block content_title %}
 
-          {% endblock %}
+<body background  = " {{ url_for('static', filename='background_for_site.jpg')}}";  >
+ 
+
         
         {% block content %}
 
         {% endblock%}
+		<div style="text-align: center;">
       </div>
 
     <!-- Optional JavaScript -->

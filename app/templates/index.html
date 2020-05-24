@@ -14,100 +14,90 @@
 
 {% block content %}
 <br>
-<div style="text-align: center;">
-
-
-<div class="bd-example" data-example-id="">
-  <div class="btn-group mr-2" role="group" aria-label="First group">
+<div class="block">
 <form action="/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="">
-    <input type="submit" class="btn btn-light btn-lg" value="Главная страница">
+    <input type="submit" class="top_butn"  value="Главная страница">
 </form>
-  </div>
 
-  <div class="btn-group mr-2" role="group" aria-label="Second group">
+</div><div class="block">
+  
     <form action="/to_pos/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="POS">
+    <input type="submit" class="top_butn" value="POS">
 </form>
-  </div>
-  
-  <div class="btn-group" role="group" aria-label="Third group">
+
+</div><div class="block">
+
     <form action="/to_kadri/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
+    <input type="submit" class="top_butn" value="кадровые вопросы">
 </form>
-  </div>
-  
-  <div class="btn-group" role="group" aria-label="foty group">
+ 
+</div><div class="block">
+
     <form action="/to_arm/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="APM">
+    <input type="submit" class="top_butn" value="APM">
 </form>
-  </div>
-  
-    <div class="btn-group" role="group" aria-label="fifty group">
+
+</div><div class="block">
+
     <form action="/to_eirs/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="ЕИРС">
+    <input type="submit" class="top_butn" value="ЕИРС">
 </form>
-  </div>
-  
-      <div class="btn-group" role="group" aria-label="sixty group">
+
+</div><div class="block">
+ 
     <form action="/to_suo/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="СУО">
+    <input type="submit" class="top_butn" value="СУО">
 </form>
-  </div>
-  
-      <div class="btn-group" role="group" aria-label="fifty group">
+
+</div><div class="block">
+ 
     <form action="/to_ot/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="КТО_ОТ">
+    <input type="submit" class="top_butn"  value="КТО_ОТ">
 </form>
-  </div>
- </div> 
 </div>
-<br>
+ 
+<br><br><br>
 
 
 
   {% for file in files%}
 
-	<div class="text-center ">
+	<div style="margin-left:500px;">
         <form action="/to_print/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="path" value="{{dir_file}}">
     <input type="hidden" name="index" value="{{file}}">
-    <input type="submit" class="btn btn-light btn-lg col-10" value="{{file}}">
+    <input type="submit" class="text_butn" value="{{file}}">
 </form>
- 
+		</div>
 		</div>	
 		<br>
 {% endfor %}
 	
-
-	<nav aria-label="...">
-  <ul class="pagination">
-  <!-- проверяем что у страницы нет предыдущей страницы -->
-    <li  {% if page==1 %} class="page-item disabled"	{% endif %}>
-	<!-- ./?page={pages.prev_num } получаем номер предыдузей страницы -->
-      <a {% if last_page > 1 %} class="page-link" href="./?page={{page - 1}}" tabindex="-1" aria-disabled="true" {% endif %}>{% if last_page > 1 %}Предыдущая страница{% endif %}</a>
-    </li>
 	
-	<li  {% if page >= last_page %} class="page-item disabled"	{% endif %}		>
-      <a {% if last_page > 1 %} class="page-link" href="./?page={{page + 1}}"aria-disabled="true"{% endif %}>{% if last_page > 1 %}Следующая страница{% endif %}</a>
-    </li>
-  </ul>
-</nav> 
 
 
+<div style="margin-left:500px;">
+
+ <a  class="{% if page==1 %}butn_disable {% endif %} butn_next_page"{% if last_page %}  href="./?page={{page - 1}}" {% endif %}>Предыдущая страница</a>
+
+ <a class="{% if page >= last_page %}butn_disable {% endif %} butn_next_page" {% if last_page %} href="./?page={{page + 1}}"{% endif %} >Следующая страница</a>
+ 
+
+</div>
 	
 {% endblock %}

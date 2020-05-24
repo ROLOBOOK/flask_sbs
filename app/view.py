@@ -11,7 +11,7 @@ def work_with_page(page,files):
     else:
         page = 1
     stop = 8
-    last_page = len(files)//stop
+    last_page = len(files)/stop
     if page == 1:
         files = files[:stop]
     else:
@@ -33,7 +33,8 @@ def list_pos():
     page = request.args.get('page')
     files = os.listdir(r'for_print\to_pos')
     page, last_page, files = work_with_page(page,files)
-    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='to_pos')
+    return render_template('index.html',page=page,last_page=last_page, files=files, dir_file='to_pos')    
+
 
 @app.route('/to_kadri/', methods=['GET','POST'])
 def list_kard():
@@ -93,4 +94,10 @@ def to_copy():
     return render_template('wait.html')
 
 
-#os.startfile("YourDocument", "print")
+@app.errorhandler(404)
+def do_not_found_page(error):
+    return render_template('404.html'),404
+
+@app.errorhandler(500)
+def do_not_found_page(error):
+    return render_template('500.html'),500

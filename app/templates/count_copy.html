@@ -1,139 +1,132 @@
 {% extends "base.html" %}
 
-{% block title %}
 
-index
-
-{% endblock %}
-
-
-{% block content_title %}
-
-
-
-
-{% endblock %}
 
 
 {% block content %}
 <br><br><br>
-<div style="text-align: center;">
-<div class="bd-example" data-example-id="">
-  <div class="btn-group mr-2" role="group" aria-label="First group">
+
+<div class="block">
 <form action="/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="">
-    <input type="submit" class="btn btn-light btn-lg " value="Главная страница">
+    <input type="submit" class="top_butn" value="Главная страница">
 </form>
-  </div>
+
+  </div><div class="block">
   
-  <div class="btn-group mr-2" role="group" aria-label="Second group">
     <form action="/to_pos/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="POS">
+    <input type="submit" class="top_butn" value="POS">
 </form>
-  </div>
-  
-  <div class="btn-group" role="group" aria-label="Third group">
+
+ </div><div class="block"> 
+ 
     <form action="/to_kadri/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="кадровые вопросы">
+    <input type="submit" class="top_butn" value="кадровые вопросы">
 </form>
-  </div>
-  
-  <div class="btn-group" role="group" aria-label="foty group">
+ 
+ </div><div class="block">
+ 
     <form action="/to_arm/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="APM">
+    <input type="submit" class="top_butn" value="APM">
 </form>
-  </div>
-  
-    <div class="btn-group" role="group" aria-label="fifty group">
+
+ </div><div class="block">
+ 
     <form action="/to_eirs/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="ЕИРС">
+    <input type="submit" class="top_butn" value="ЕИРС">
 </form>
-  </div>
-  
-      <div class="btn-group" role="group" aria-label="sixty group">
+
+</div><div class="block">
+ 
     <form action="/to_suo/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="СУО">
+    <input type="submit" class="top_butn" value="СУО">
 </form>
-  </div>
-  
-      <div class="btn-group" role="group" aria-label="fifty group">
+
+</div><div class="block">
+ 
     <form action="/to_ot/" method="POST">
     <!-- скрытый параметр -->
     <input type="hidden" name="index" value="pos">
-    <input type="submit" class="btn btn-light btn-lg" value="КТО_ОТ">
+    <input type="submit" class="top_butn" value="КТО_ОТ">
 </form>
-  </div>
-  </div>
-</div>
+ </div>
 <br><br><br><br><br>
 
 
 
 
 
-
-  <div style="text-align: center;"> <br>
+<div style="text-align: center;">
   
-  <h1><span class="badge badge-light">Выберите количество копий</span></h1>
+
+    <input type="submit" style= "background: #FFFACD; 
+ height: 70px;  
+ border-radius: 5px; 
+ box-shadow: 0px 1px 3px; 
+ font-size: 50px; " value="Выберите количество копий">
+
   
   <br><br>
-	<div class="btn-group" role="group" aria-label="fifty group">
+
+<div class="block"> 
+	
     <form action="/to_copy/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="count" value="{{1}}">
     <input type="hidden" name="index" value="{{go_print}}">
-    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="1 copy">
+    <input type="submit" class="butn_cop" value="1 копия">
 </form>
-  </div>
-  
-  	<div class="btn-group" role="group" aria-label="fifty group">
+
+ </div><div class="block"> 
+
     <form action="/to_copy/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="count" value="{{2}}">
     <input type="hidden" name="index" value="{{go_print}}">
-    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="2 copy">
+    <input type="submit" class="butn_cop" value="2 копии">
 </form>
-  </div>
+ </div>
+ 
   <br><br>
-  	<div class="btn-group" role="group" aria-label="fifty group">
+  <div class="block">	
     <form action="/to_copy/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="count" value="{{3}}">
     <input type="hidden" name="index" value="{{go_print}}">
-    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="3 copy">
+    <input type="submit"class="butn_cop" value="3 копии">
 </form>
-  </div>
-  
-  	<div class="btn-group" role="group" aria-label="fifty group">
+ 
+  </div><div class="block">  
+
     <form action="/to_copy/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="count" value="{{5}}">
     <input type="hidden" name="index" value="{{go_print}}">
-    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="4 copy">
+    <input type="submit" class="butn_cop" value="4 копии">
 </form>
-  </div>
+ </div> 
   
   <br><br>
   
- 	<div class="btn-group" role="group" aria-label="fifty group">
+ 	
     <form action="/to_copy/" method="POST">
     <!-- скрытый параметр -->
 	<input type="hidden" name="count" value="{{10}}">
     <input type="hidden" name="index" value="{{go_print}}">
-    <input type="submit" class="btn btn-light btn-lg p-3 mb-2" value="5 copy">
+    <input type="submit" class="butn_cop"  value="5 копий">
 </form>
+ 
   </div>
-  
-</div>
+
 {% endblock %}

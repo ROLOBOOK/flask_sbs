@@ -1,2 +1,4 @@
 TIMEOUT /T 10
-python C:\flask_sbs\app\main.py
+
+cd  C:\Users\print_doc\Desktop\flask_sbs\app
+python main.py
