@@ -14,6 +14,7 @@
 
 {% block content %}
 <br>
+<div style="text-align: center;">
 <div class="block">
 <form action="/" method="POST">
     <!-- скрытый параметр -->
@@ -69,7 +70,7 @@
     <input type="submit" class="top_butn"  value="КТО_ОТ">
 </form>
 </div>
- 
+ </div>
 <br><br><br>
 
 
@@ -90,14 +91,15 @@
 	
 	
 
+<div style="text-align: center;">
+    
 
-<div style="margin-left:500px;">
 
- <a  class="{% if page==1 %}butn_disable {% endif %} butn_next_page"{% if last_page %}  href="./?page={{page - 1}}" {% endif %}>Предыдущая страница</a>
+ <a  class="{% if page==1 %}butn_disable {% endif %} butn_next_page"{% if last_page %}  href="./?page={{page - 1}}" {% endif %}><<<</a>    
 
- <a class="{% if page >= last_page %}butn_disable {% endif %} butn_next_page" {% if last_page %} href="./?page={{page + 1}}"{% endif %} >Следующая страница</a>
+ <a class="{% if page >= last_page %}butn_disable {% endif %} butn_next_page" {% if last_page %} href="./?page={{page + 1}}"{% endif %} style="margin-left: 50px;" >>>></a>
  
-
+  
 </div>
 	
 {% endblock %}
